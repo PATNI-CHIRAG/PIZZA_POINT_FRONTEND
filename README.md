@@ -22,9 +22,7 @@ Dark/Light Mode: A theme toggle for a better user experience in different lighti
 1. Clone the repo:
 ```bash
 git clone https://github.com/PATNI-CHIRAG/PIZZA_POINT_FRONTEND.git
-cd PIZZA_POINT_FRONTEND   # the folder that contains manage.py
 ```
-
 
 2. Open the HTML file: Simply open the Pizza.html file in your web browser (like Chrome, Firefox, or Edge). You can do this by double-clicking the file.
 
