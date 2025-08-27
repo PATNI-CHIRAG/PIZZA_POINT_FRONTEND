@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <title>Pizza Point Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Pizza.css" />
+</head>
+
+<body>
+    <!-----------------: Navbar :--------------------->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="images/logo.jpg" id="#logo1" alt="logo" />
+                </a>
+                <a href="#" class="navbar-brand">
+                    <img src="images/name.png" id="#logo1" alt="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="order nav-link" type="button" data-bs-toggle="modal" data-bs-target="#order">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button type="button" class="btnlogin nav-link" data-bs-toggle="modal" data-bs-target="#login" id="loginBtn">
+                                Login
+                            </button>
+                            <span class="nav-link d-none" id="userEmail"></span>
+                            <button class="nav-link d-none" id="logoutBtn" onclick="Logout()">Logout</button>
+                        </li>
+                        
+
+                        <!-- <li class="nav-item">
+                            <button type="button" class="btnlogin nav-link" data-bs-toggle="modal"
+                                data-bs-target="#login">Login</button>
+                        </li> -->
+
+                        
+
+
+                        <li class="nav-item">
+                            <button class="theme-toggle nav-link" onclick="toggleTheme()">
+                                <i id="theme-icon" class="fas fa-sun"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!----------------- :order button: -------------->
+    <div class="modal" id="order">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Order Form</h5>
+                </div>
+
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="o_name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Phone Number:</label>
+                            <input type="text" class="form-control" id="o_number" name="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method:</label>
+                            <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                                <option value="cash on delivery">Cash on delivery</option>
+                                <option value="creditCard">Credit Card</option>
+                                <option value="paytm">Paytm</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <textarea class="form-control" id="o_address" name="address" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" form="orderForm" onclick="Order()">Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------: Login/Register Page :----------------->
+    <div class="modal" id="login">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2>Login</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="input-box">
+                            <input type="email" id="l_email" required />
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="l_password" required />
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" required />Remember me </label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="button" class="btn-login" onclick="Login()">Login</button>
+                    </form>
+                </div>
+                <div class="footer">
+                    <div class="login-register">
+                        <p>Don't have an account?<button type="button" class="btnlogin" data-bs-toggle="modal"
+                                data-bs-target="#register">Register</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="register">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2>Register</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="input-box">
+                            <input type="text" id="r_name" required />
+                            <label>Name</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" id="r_email" required />
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" id="r_password" required />
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" required />I agree to the terms and condition
+                            </label>
+                        </div>
+                        <button type="button" class="btn-login" onclick="Register()">Register</button>
+                    </form>
+                </div>
+                <div class="footer">
+                    <div class="login-register">
+                        <p>Already have an account?<button type="button" data-bs-dismiss="modal">Login</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------: Home Section :-------------------->
+    <section class="home" id="home">
+        <div class="home_text">
+            <span class="heading">Home</span>
+            <h1>Pizza Taste</h1>
+            <h2>The Tasty Pizza of<br>Your Choice</h2>
+            <h2>Popular Pizza Here </h2>
+            <a href="#about" class="btn btn-secondary">About Us</a>
+            <a href="#menu" class="btn btn-secondary">View Menu</a>
+
+        </div>
+        <!------------------: Carousel :-------------------->
+        <div class="home_carosel">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/home-img-1.png" alt="home_img" style="width:100%" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/home-img-2.png" alt="home_img" style="width:100%" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/home-img-3.png" alt="home_img" style="width:100%" class="d-block w-100" />
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------: About Us Section :---------------------------->
+    <section class="about" id="about">
+        <div class="about_img">
+            <!-- <span class="heading">About Us</span> -->
+            <img src="images/about-1.svg" alt="about-1" />
+            <div class="about_text">
+                <h2>We Make Tasty Pizza</h2>
+                <a href="#menu" class="btn btn-secondary" id="about_btn">View Menu</a>
+            </div>
+        </div>
+        <div class="about_img">
+            <img src="images/about-2.svg" alt="about-2" />
+            <div class="about_text">
+                <h2>delivery in 30 Minutes</h2>
+                <a href="#menu" class="btn btn-secondary" id="about_btn">View Menu</a>
+            </div>
+        </div>
+        <div class="about_img">
+            <img src="images/about-3.svg" alt="about-3" />
+            <div class="about_text">
+                <h2>Share And Enjoy</h2>
+                <a href="#menu" class="btn btn-secondary" id="about_btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-----------------------------------: Menu section :------------------------------>
+    <h1 class="heading">our menu</h1>
+    <section id="menu" class="menu">
+
+        <div class="menu_img">
+            <div class="price">$5/-</div>
+            <img src="images/home-img-1.png" alt="">
+            <div class="name">Popular pizza 1</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('Popular pizza 1',5,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$5/-</div>
+            <img src="images/home-img-2.png" alt="">
+            <div class="name">Popular pizza 2</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('Popular pizza 2',5,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$6/-</div>
+            <img src="images/home-img-3.png" alt="">
+            <div class="name">Popular pizza 3</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('Popular pizza 3',6,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$2/-</div>
+            <img src="images/pizza-1.jpg" alt="">
+            <div class="name">pizza 1</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 1',2,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$4/-</div>
+            <img src="images/pizza-2.jpg" alt="">
+            <div class="name">pizza 2</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 2',4,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$2/-</div>
+            <img src="images/pizza-3.jpg" alt="">
+            <div class="name">pizza 3</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 3',3,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$3/-</div>
+            <img src="images/pizza-4.jpg" alt="">
+            <div class="name">pizza 4</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 4',3,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$2/-</div>
+            <img src="images/pizza-5.jpg" alt="">
+            <div class="name">pizza 5</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 5',2,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$4/-</div>
+            <img src="images/pizza-6.jpg" alt="">
+            <div class="name">pizza 6</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 6',4,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$2/-</div>
+            <img src="images/pizza-7.jpg" alt="">
+            <div class="name">pizza 7</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 7',2,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$3/-</div>
+            <img src="images/pizza-8.jpg" alt="">
+            <div class="name">pizza 8</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 8',3,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+        <div class="menu_img">
+            <div class="price">$4/-</div>
+            <img src="images/pizza-9.jpg" alt="">
+            <div class="name">pizza 9</div>
+            <form action="" method="post">
+                <input type="number" min="1" max="100" value="1" class="qty" name="qty">
+                <input type="button" value="Add To Cart" name="add_to_cart"
+                    onclick="add_cart('pizza 9',4,this.closest('form').querySelector('.qty').value)"
+                    class="btn btn-success">
+            </form>
+        </div>
+
+    </section>
+
+    <!---------------- :footer section : ----------------->
+
+    <section class="contact" id="contact">
+
+        <div class="box-container">
+
+            <div class="box ">
+                <h3>phone number</h3>
+                <p>+111-333-7890</p>
+                <p>+111-222-3333</p>
+            </div>
+
+            <div class="box">
+                <h3>our address</h3>
+                <p>mumbai, IND- 400104</p>
+            </div>
+
+            <div class="box">
+                <h3>opening hours</h3>
+                <p>06:00am to 12:00pm</p>
+            </div>
+
+            <div class="box">
+                <h3>email address</h3>
+                <p>John@gmail.com</p>
+                <p>Harry@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Designed By CHIRAG.| all rights reserved!
+        </div>
+
+    </section>
+
+
+    <script src="Pizza.js"></script>
+</body>
+
+</html>

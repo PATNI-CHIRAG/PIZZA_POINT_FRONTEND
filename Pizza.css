@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  text-decoration: none;
+  
+}
+*::selection{
+    background: var(--main-color);
+    color: #fff;
+}
+:root{
+    --main-color:#ffb411;
+    --text-color:#1e1c2a;
+    --bg-color:#fff;
+    --big-font: 4rem;
+    --h2-font: 2rem;
+    --p-font: 1rem;
+    --box-shadow: 5px 10px #888888;
+}
+
+section{
+    padding: 50px 10%;
+}
+body.active{
+    --bg-color:#1e1c2a;
+    --text-color:#fff;
+}
+body{
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;  
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 0px 0px;
+    box-shadow: 0 0.5rem 50rem rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: var(--text-color);
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color: var(--main-color);
+}
+
+.navbar-nav a.nav-link{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.5s;
+    margin-right: 35px;
+    
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--main-color);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+button.btnlogin.nav-link{
+    width: 120px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: var(--p-font);
+    color:black;
+    font-weight: 500;
+    transition: 0.5s;
+    padding: 5px;
+    margin: 10px;
+}
+button.btnlogin.nav-link:hover{
+    background-color: black;
+    color: #fff;
+}
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--main-color);
+}
+
+/* ----------------:Sunlight moonlight:--------------- */
+.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar button i {
+    color: #333;
+}
+
+.navbar button:hover i {
+    color:var();    
+} 
+i.fas.fa-shopping-cart:hover{
+    color: var(--main-color);
+}
+
+/*---------------: Login/Register Page :------------*/
+.modal .modal-dialog .modal-content {
+    width: 400px;
+    height: 500px;
+    background:rgb(246, 199, 72);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);    
+    box-shadow: 0 0 30px black;
+    justify-content: space-between;
+    align-items: center;
+    
+ }
+
+.modal-header h2{
+    color: black;
+    text-align: center;
+    font-size:var(--h2-font);
+    font-family: 'Times New Roman';
+    align-items: center;
+    font-weight: bold;
+ }
+ 
+.input-box{
+    position: relative;
+    width: 80px;
+    height: 50px;
+    margin: 30px 0;
+}
+.remember-forgot{
+    font-size: 0.8rem;
+    color: black;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.btn-login{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+}
+.login-register button{
+    text-decoration: none;
+    border: none;
+    background: transparent;
+}
+.login-register button:hover{
+    text-decoration:underline; 
+    color: blue; 
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+ /*------:Home Section :--------------*/
+.home{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+.home{
+    background: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url("images/background_imag.avif");   
+    background-size: auto;
+
+}
+.home_text h1{
+    font-size: var(--big-font);
+    color: var(--main-color);
+}
+.home_text h2{
+    font-size: var(--h2-font);
+    color:black;
+    margin: 1rem 0 1rem;
+}
+ 
+a.btn.btn-secondary:hover{
+    background-color: var(--main-color);
+}
+
+/*------:About Section :--------------*/
+.about{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+    align-items: center;
+}
+.about_text h2{
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: var(--h2-font);
+}
+.heading{
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: var(--h2-font);
+}
+
+#about_btn:hover{
+    background-color: #ffa400;
+}
+
+/*------------: Menu Section :-----------------*/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.menu_img {
+    width: 30%;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.menu_img img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu_img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.menu_img .price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.menu_img .name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu_img .btn {
+    background-color: #28a745;
+    padding: 8px 20px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.menu_img .btn:hover {
+    background-color: #218838;
+}
+input.qty{
+    padding-bottom: 12px;
+    margin: 0px 6px;
+    width: 45px;
+}
+
+/*------------------: contect Section: -------------------- */
+.contact .box-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2rem;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+ 
+.contact .box-container .box{
+    padding:2rem;
+    text-align: center;
+    background-color: rgb(185, 190, 196);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    border: 2px solid black;
+    height: 300px;
+}
+ 
+.contact .box-container .box h3{
+    margin:1rem 0;
+    color:black;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+ 
+.contact .box-container .box p{
+    line-height: 2;
+    font-size: 1.6rem;
+    color:black;
+}
+ 
+.contact .credit{
+    text-align: center;
+    margin-top: 3rem;
+    padding:1rem 0;
+    padding-top: 3rem;
+    font-size: 2rem;
+    color:black;
+}
+
+/* --------------:Responsive:-------------- */
+/* Media Queries for Responsive Design */
+
+/* For devices with a maximum width of 1200px (e.g., small laptops) */
+@media (max-width: 1200px) {
+    .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact .box-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For devices with a maximum width of 768px (e.g., tablets) */
+@media (max-width: 768px) {
+    header .navbar {
+        display:block;/* Hide the navbar on smaller screens */
+        text-align: center;
+        justify-content:space-around;
+    }
+
+    #menu-icon {
+        display: block; /* Show the menu icon for mobile navigation */
+    }
+
+    .home_text h1 {
+        font-size: 3rem;
+    }
+
+    .home_text h2 {
+        font-size: 1.5rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .contact .box-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal .modal-dialog .modal-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* For devices with a maximum width of 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+
+    .home_text h1 {
+        font-size: 2.5rem;
+    }
+
+    .home_text h2 {
+        font-size: 1.2rem;
+    }
+
+    .navbar .btnlogin {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .menu_img {
+        width: 100%;
+    }
+
+    .contact .box-container .box h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact .box-container .box p {
+        font-size: 1.2rem;
+    }
+
+    .contact .credit {
+        font-size: 1.5rem;
+    }
+}
+
+/* For devices with a maximum width of 320px (e.g., small mobile phones) */
+@media (max-width: 320px) {
+    .home_text h1 {
+        font-size: 2rem;
+    }
+
+    .home_text h2 {
+        font-size: 1rem;
+    }
+
+    .navbar .btnlogin {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .menu_img .name {
+        font-size: 1rem;
+    }
+
+    .menu_img .btn {
+        font-size: 0.8rem;
+    }
+
+    .contact .box-container .box h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact .box-container .box p {
+        font-size: 1rem;
+    }
+
+    .contact .credit {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ensure the navbar is responsive */
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+/* Center the navbar items when collapsed */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}
+
+/* for swap first box to last box */
+@media (max-width: 500px) {
+    .contact  {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .contact .box:first-child {
+        order: 2;
+    }
+
+    .contact .box:last-child {  
+        order: -1;
+    }
+}
