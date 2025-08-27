@@ -18,19 +18,15 @@ Dark/Light Mode: A theme toggle for a better user experience in different lighti
 
 
 ## 🚀 How to Run This Project Locally 
-This is a front-end project built with HTML, CSS, and JavaScript. You do not need any special servers or build tools to run it.
 
-Download the files: Make sure you have all the project files in a single folder on your computer:
+1. Clone the repo:
+```bash
+git clone https://github.com/PATNI-CHIRAG/PIZZA_POINT_FRONTEND.git
+cd PIZZA_POINT_FRONTEND   # the folder that contains manage.py
+```
 
-Pizza.html
 
-Pizza.css
-
-Pizza.js
-
-An images folder containing all the necessary images.
-
-Open the HTML file: Simply open the Pizza.html file in your web browser (like Chrome, Firefox, or Edge). You can do this by double-clicking the file.
+2. Open the HTML file: Simply open the Pizza.html file in your web browser (like Chrome, Firefox, or Edge). You can do this by double-clicking the file.
 
 That's it! The website should now be running locally in your browser.
 
