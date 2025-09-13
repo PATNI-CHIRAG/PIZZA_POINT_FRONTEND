@@ -125,6 +125,25 @@ button.btnlogin.nav-link:hover{
     background-color: black;
     color: #fff;
 }
+
+#logoutBtn{
+    width: 120px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: var(--p-font);
+    color:black;
+    font-weight: 500;
+    transition: 0.5s;
+    padding: 5px;
+    margin: 10px;
+}
+#logoutBtn:hover{
+    background-color: black;
+    color: #fff;
+}
 .theme-toggle {
     background: none;
     border: none;

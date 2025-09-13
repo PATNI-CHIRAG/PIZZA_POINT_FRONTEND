@@ -30,48 +30,41 @@ function Register(){
     }
     else {
         alert("Registered successfully!");
-        
+        register = true;
     }
 }
 
-// function Login(){
+function Login(){
 
-//     l_email = document.getElementById("l_email").value;
-//     l_password = document.getElementById("l_password").value;
+    l_email = document.getElementById("l_email").value;
+    l_password = document.getElementById("l_password").value;
 
-//     if(register)
-//     {
-//         if((l_email != r_email) || (l_password != r_password)){
-//             alert("Somthing wrong !");
-//         }
-//         else{
-//             alert("Login Successfully by : "+r_name);
-//             login = true;
+    if(register)
+    {
+        if((l_email != r_email) || (l_password != r_password)){
+            alert("Somthing wrong !");
+        }
+        else{
+            alert("Login Successfully by : "+r_name);
+            login = true;
 
-//         }
-//     }else{
-//         alert("Please Register!")
-//     }
-// }
-
-function Login() {
-    let email = document.getElementById("l_email").value;
-    let password = document.getElementById("l_password").value;
-
-    if (email && password) {
-        localStorage.setItem("userEmail", email);
-
-        document.getElementById("loginBtn").classList.add("d-none");
-        let userEmailDisplay = document.getElementById("userEmail");
-        userEmailDisplay.textContent = email;
-        userEmailDisplay.classList.remove("d-none");
-
-        let loginModal = document.getElementById("login");
-        let modalInstance = bootstrap.Modal.getInstance(loginModal);
-        modalInstance.hide();
+            document.getElementById("loginBtn").classList.add("d-none");
+            document.getElementById("logoutBtn").classList.remove("d-none");
+        }
+    }else{
+        alert("Please Register!")
     }
 }
 
+function Logout() {
+    login = false;
+
+    // Show Login button, hide Logout
+    document.getElementById("loginBtn").classList.remove("d-none");
+    document.getElementById("logoutBtn").classList.add("d-none");
+
+    alert("Logged out successfully!");
+}
 
 let cartItems = [];
 function add_cart(pizzaName, pizzaPrice, quantity) 
