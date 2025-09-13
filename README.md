@@ -38,3 +38,5 @@ JavaScript: For interactivity, user authentication, cart functionality, and them
 Bootstrap 5: For the responsive grid system, modal pop-ups, and carousel.
 
 Font Awesome: For icons used throughout the site.
+
+[🎥 Watch Demo]
