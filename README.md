@@ -2,6 +2,10 @@
 A responsive and interactive front-end website for a **Pizza Ordering System**. 
 The project allows users to browse pizzas, place orders, and manage them easily.
 
+🎥 Watch Demo
+
+https://github.com/user-attachments/assets/db35009c-f85f-4a38-9336-56d6425538c5
+
 
 ## ✨ Features 
 Responsive Design: The website is fully responsive and works on various devices, including desktops, tablets, and mobile phones.
